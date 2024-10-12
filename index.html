@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate Bangladesh B10A5</title>
+    <!-- daisy Ui and tailwind css  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="sticky top-0 bg-gradient-to-b from-gray-200 to-transparent">
+      <!-- navbar starts here -->
+      <div class="bg-[#F9F7F3]">
+        <div class="w-11/12 mx-auto">
+          <div class="navbar py-3">
+            <div class="navbar-start">
+              <a class="btn text-xl px-8 bg-[#B4F461]" href="./home.html"
+                >Block</a
+              >
+            </div>
+            <div class="navbar-center">
+              <div class="menu menu-horizontal px-1 flex items-center gap-2">
+                <img
+                  src="./assets/logo.png"
+                  class="w-15 h-10"
+                  alt=""
+                />
+                <h2 class="text-xl font-bold hidden md:flex">
+                  Donate Bangladesh
+                </h2>
+              </div>
+            </div>
+            <div class="navbar-end space-x-1">
+              <img src="./assets/coin.png" alt="" />
+              <span id="main-balance" class="text-xl font-semibold">5500</span>
+              <span class="text-xl font-semibold">BDT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center items-center gap-5 mt-12">
+        <button id="donation-btn" class="btn btn-lg px-8 bg-[#B4F461]">Donation</button>
+        <button id="history-btn" class="btn btn-lg px-8">History</button>
+      </div>
+    <div class="divider"></div>
+      <!-- navbar ends here -->
+    </header>
+    
+    <main class="w-11/12 mx-auto">
+      <div id="donation-section">
+      <!-- Noakhali, Bangladesh section starts here-->
+      <section
+        class="flex flex-col lg:flex-row items-center gap-10 my-5 border-2 border-gray-100 rounded-xl p-6"
+      >
+        <!-- img part -->
+        <div class="flex-1"> 
+          <img class="w-full max-h-96" src="./assets/noakhali.png" alt="" />
+        </div>
+        <!-- content part  -->
+        <div class="flex-1" >
+          <button class="btn flex items-center gap-2">
+            <img src="./assets/coin.png" alt="" />
+            <span id="noakhali-balance" class="text-xl">0</span>
+            <span class="text-xl">BDT</span>
+          </button>
+          <h2 id="heading1" class="text-[#111111] text-xl font-bold my-3">
+            Donate for Flood at Noakhali, Bangladesh
+          </h2>
+          <p class="text-[#111111B3] font-semibold mb-5 lg:mb-12">
+            The recent floods in Noakhali, Bangladesh, have caused significant devastation, affecting over 90% of the population in both Noakhali and the nearby Feni district Every contribution,Many homes and causing a severe public health risk, especially due to the lack of clean drinking water and the spread of waterborne diseases like cholera.
+          </p>
+          <input id="noakhali-input"
+            class="border-2 border-gray-200 w-full p-3 rounded-xl"
+            type="text"
+            placeholder="Write Donation Amount"
+          />
+          <div class="text-center">
+            <button id="noakhali-btn" class="my-4 text-center bg-[#B4F461] py-3 px-5 rounded-xl text-[#111111] font-bold text-xl">Donate Now</button>
+          </div>
+        </div>
+      </section>
+      <!-- Noakhali, Bangladesh section ends here-->
+
+      <!-- feni, Bangladesh section starts here-->
+      <section
+        class="flex flex-col lg:flex-row items-center gap-10 my-5 border-2 border-gray-100 rounded-xl p-6"
+      >
+        <!-- img part -->
+        <div class="flex-1">
+          <img class="w-full max-h-96" src="./assets/feni.png" alt="" />
+        </div>
+        <!-- content part  -->
+        <div class="flex-1">
+          <button class="btn flex items-center gap-2">
+            <img src="./assets/coin.png" alt="" />
+            <span id="feni-balance" class="text-xl">600</span>
+            <span class="text-xl">BDT</span>
+          </button>
+          <h2 id="heading2" class="text-[#111111] text-xl font-bold my-2">
+            Donate for Flood Relief in Feni,Bangladesh
+          </h2>
+          <p class="text-[#111111B3] font-semibold mb-5 lg:mb-11">
+            The recent floods in Feni, Bangladesh, which began in August 2024, have caused widespread devastation. Over 90% of the district's population has been affected, with thousands displaced and entire communities cut off from essential services. Many homes were destroyed, with around 48% of the housing in flood-affected.
+          </p>
+          <input id="feni-input"
+            class="border-2 border-gray-200 w-full p-3 rounded-xl"
+            type="text"
+            placeholder="Write Donation Amount"
+          />
+          <div class="text-center">
+            <button id="feni-btn" class="my-6 text-center bg-[#B4F461] py-3 px-5 rounded-xl text-[#111111] font-bold text-xl">Donate Now</button>
+          </div>
+        </div>
+      </section>
+      <!-- feni, Bangladesh section ends here-->
+
+      <!-- Quota Movement, Bangladesh section starts here-->
+      <section
+        class="flex flex-col lg:flex-row items-center gap-10 my-5 border-2 border-gray-100 rounded-xl p-6"
+      >
+        <!-- img part -->
+        <div class="flex-1">
+          <img class="w-full max-h-96" src="./assets/quota-protest.png" alt="" />
+        </div>
+        <!-- content part  -->
+        <div class="flex-1">
+          <button class="btn flex items-center gap-2">
+            <img src="./assets/coin.png" alt="" />
+            <span id="quota-balance" class="text-xl">2400</span>
+            <span class="text-xl">BDT</span>
+          </button>
+          <h2 id="heading3" class="text-[#111111] text-xl font-bold my-3">
+            Aid for Injured in the Quota Movement
+          </h2>
+          <p class="text-[#111111B3] font-semibold mb-5 lg:mb-10">
+            The recent floods in Quota movement have caused significant damage to homes infrastructure. Your donation will help provide essential supplies and to those affected by this disaster. Every contribution, big or small, makes difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.
+            
+          </p>
+          <input id="quota-input"
+            class="border-2 border-gray-200 w-full p-3 rounded-xl"
+            type="text"
+            placeholder="Write Donation Amount"
+          />
+          <div class="text-center">
+            <button id="quota-btn" class="my-6 text-center bg-[#B4F461] py-3 px-5 rounded-xl text-[#111111] font-bold text-xl">Donate Now</button>
+          </div>
+           <!-- Open the modal using ID.showModal() method -->
+           <dialog id="my_modal_1" class="modal text-center">
+            <div class="modal-box">
+              <h3 class="text-4xl font-bold">Congrates!</h3>
+              <div class="flex justify-center py-5">
+                <img src="./assets/coin.png" alt="">
+              </div>
+              <p class="py-4 text-xl">
+                You Have Donated for Humankind
+              </p>
+              <p class="text-2xl font-bold">
+                Successfully
+              </p>
+              <div class="modal-action flex justify-center">
+                <form method="dialog">
+                  <!-- modal btn  -->
+                    <button class="btn">Close confirmation</button>
+                </form>
+              </div>
+            </div>
+          </dialog>
+        </div>
+      </section>
+      <!-- Quota Movement, Bangladesh section ends here-->
+    </div>
+      <!-- history section starts here  -->
+       <section id="history-section" class="hidden">
+       </section>
+      <!-- history section ends here  -->
+    </main>
+    <script src="./js/utilities.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

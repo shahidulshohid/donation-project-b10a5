@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Bangladesh B10A5</title>
+    <!-- daisy Ui and tailwind css  -->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <header>
+        <!-- navbar starts here -->
+        <div class="bg-[#F9F7F3]">
+          <div class="w-11/12 mx-auto">
+            <div class="navbar py-3">
+              <div class="navbar-start">
+                <a class="btn text-xl px-8 bg-[#B4F461]" href="./index.html">Home</a>
+              </div>
+              <div class="navbar-center">
+                <div class="menu menu-horizontal px-1 flex items-center gap-2">
+                  <img src="./assets/logo.png" class="w-15 h-10" alt="">
+                  <h2 class="text-xl font-bold hidden md:flex">
+                    Donate Bangladesh
+                  </h2>
+                </div>
+              </div>
+              <div class="navbar-end space-x-1">
+                <img src="./assets/coin.png" alt="">
+                <span class="text-xl font-semibold">BDT</span>
+                <span class="text-xl font-semibold">5500</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- navbar ends here -->
+    </header>
+    <main class="w-11/12 mx-auto">
+      <!-- FAQ section -->
+       <section>
+        <h3 class="text-4xl font-extrabold my-12">Important FAQ ?</h3>
+
+        <div class="collapse collapse-arrow border-2 border-gray-100 my-5">
+          <input type="radio" name="my-accordion-2" checked="checked" />
+          <div class="collapse-title text-xl font-medium">What is the Document Object Model(DOM)?</div>
+          <div class="collapse-content">
+            <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a webpage and also through JavaScript, we can interact with the DOM to dynamically update the page: like we can add, remove, modify elements and change styles or attributes. Using the DOM a webpage can update content dynamically.</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow border-2 border-gray-100 my-5">
+          <input type="radio" name="my-accordion-2" checked="checked" />
+          <div class="collapse-title text-xl font-medium">How to you select an element from the DOM?</div>
+          <div class="collapse-content">
+            <p>To select an element from the DOM using JavaScript, We have several methods to select an element from the DOM.first of all i have to think how i select the element Here are the most common ways to select element</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow border-2 border-gray-100 my-5">
+          <input type="radio" name="my-accordion-2" checked="checked" />
+          <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM,and why is it useful?</div>
+          <div class="collapse-content">
+            <p>Event delegation is a technique in web development where you attach a single event listener to a parent element.When an event is triggered on an element, it first runs the event handlers on that element, then bubbles up the DOM tree, triggering event handlers on its ancestors.Instead of attaching event listeners to multiple child elements, you add a single event listener to a parent element. When an event occurs on a child element, it bubbles up to the parent, where the event listener can capture it.</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow border-2 border-gray-100 my-5">
+          <input type="radio" name="my-accordion-2" checked="checked" />
+          <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using the DOM?</div>
+          <div class="collapse-content">
+            <p>In the DOM, you can manipulate an element’s attributes and styles dynamically using JavaScript.I can use the .getAttribute() method to retrieve the value of an attribute. I can manipulate inline styles directly using the style property. Each CSS property is represented by a camelCase version of its name. i can assign multiple styles at once using cssText.</p>
+          </div>
+        </div>
+       </section>
+    </main>
+    <script src="./js/utilities.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
