@@ -37,25 +37,25 @@
             </div>
             <div class="navbar-end space-x-1">
               <img src="./assets/coin.png" alt="" />
-              <span id="main-balance" class="text-xl font-semibold">5500</span>
+              <span id="balance" class="text-xl font-semibold">5500</span>
               <span class="text-xl font-semibold">BDT</span>
             </div>
           </div>
         </div>
       </div>
       <div class="flex justify-center items-center gap-5 mt-12">
-        <button id="donation-btn" class="btn btn-lg px-8 bg-[#B4F461]">Donation</button>
-        <button id="history-btn" class="btn btn-lg px-8">History</button>
+        <button id="show-donation-btn" class="btn btn-lg px-8 bg-[#B4F461]">Donation</button>
+        <button id="show-history-btn" class="btn btn-lg px-8">History</button>
       </div>
     <div class="divider"></div>
       <!-- navbar ends here -->
     </header>
     
-    <main class="w-11/12 mx-auto">
+    <main id="donation-container" class="w-11/12 mx-auto">
       <div id="donation-section">
       <!-- Noakhali, Bangladesh section starts here-->
       <section
-        class="flex flex-col lg:flex-row items-center gap-10 my-5 border-2 border-gray-100 rounded-xl p-6"
+        class="card flex flex-col lg:flex-row items-center gap-10 my-5 border-2 border-gray-100 rounded-xl p-6"
       >
         <!-- img part -->
         <div class="flex-1"> 
@@ -65,22 +65,22 @@
         <div class="flex-1" >
           <button class="btn flex items-center gap-2">
             <img src="./assets/coin.png" alt="" />
-            <span id="noakhali-balance" class="text-xl">0</span>
+            <span class="card-balance text-xl">0</span>
             <span class="text-xl">BDT</span>
           </button>
-          <h2 id="heading1" class="text-[#111111] text-xl font-bold my-3">
+          <h2 id="heading1" class="text-[#111111] text-xl font-bold my-3 card-title">
             Donate for Flood at Noakhali, Bangladesh
           </h2>
           <p class="text-[#111111B3] font-semibold mb-5 lg:mb-12">
             The recent floods in Noakhali, Bangladesh, have caused significant devastation, affecting over 90% of the population in both Noakhali and the nearby Feni district Every contribution,Many homes and causing a severe public health risk, especially due to the lack of clean drinking water and the spread of waterborne diseases like cholera.
           </p>
           <input id="noakhali-input"
-            class="border-2 border-gray-200 w-full p-3 rounded-xl"
+            class="input border-2 border-gray-200 w-full p-3 rounded-xl"
             type="text"
             placeholder="Write Donation Amount"
           />
           <div class="text-center">
-            <button id="noakhali-btn" class="my-4 text-center bg-[#B4F461] py-3 px-5 rounded-xl text-[#111111] font-bold text-xl">Donate Now</button>
+            <button class="my-4 text-center bg-[#B4F461] py-3 px-5 rounded-xl text-[#111111] font-bold text-xl donate-btn">Donate Now</button>
           </div>
         </div>
       </section>
@@ -88,7 +88,7 @@
 
       <!-- feni, Bangladesh section starts here-->
       <section
-        class="flex flex-col lg:flex-row items-center gap-10 my-5 border-2 border-gray-100 rounded-xl p-6"
+        class="card flex flex-col lg:flex-row items-center gap-10 my-5 border-2 border-gray-100 rounded-xl p-6"
       >
         <!-- img part -->
         <div class="flex-1">
@@ -98,22 +98,22 @@
         <div class="flex-1">
           <button class="btn flex items-center gap-2">
             <img src="./assets/coin.png" alt="" />
-            <span id="feni-balance" class="text-xl">600</span>
+            <span class="card-balance text-xl">600</span>
             <span class="text-xl">BDT</span>
           </button>
-          <h2 id="heading2" class="text-[#111111] text-xl font-bold my-2">
+          <h2 id="heading2" class="text-[#111111] text-xl font-bold my-2 card-title">
             Donate for Flood Relief in Feni,Bangladesh
           </h2>
           <p class="text-[#111111B3] font-semibold mb-5 lg:mb-11">
             The recent floods in Feni, Bangladesh, which began in August 2024, have caused widespread devastation. Over 90% of the district's population has been affected, with thousands displaced and entire communities cut off from essential services. Many homes were destroyed, with around 48% of the housing in flood-affected.
           </p>
           <input id="feni-input"
-            class="border-2 border-gray-200 w-full p-3 rounded-xl"
+            class="input border-2 border-gray-200 w-full p-3 rounded-xl"
             type="text"
             placeholder="Write Donation Amount"
           />
           <div class="text-center">
-            <button id="feni-btn" class="my-6 text-center bg-[#B4F461] py-3 px-5 rounded-xl text-[#111111] font-bold text-xl">Donate Now</button>
+            <button id="feni-btn" class="my-6 text-center bg-[#B4F461] py-3 px-5 rounded-xl text-[#111111] font-bold text-xl donate-btn">Donate Now</button>
           </div>
         </div>
       </section>
@@ -121,7 +121,7 @@
 
       <!-- Quota Movement, Bangladesh section starts here-->
       <section
-        class="flex flex-col lg:flex-row items-center gap-10 my-5 border-2 border-gray-100 rounded-xl p-6"
+        class="card flex flex-col lg:flex-row items-center gap-10 my-5 border-2 border-gray-100 rounded-xl p-6"
       >
         <!-- img part -->
         <div class="flex-1">
@@ -131,10 +131,10 @@
         <div class="flex-1">
           <button class="btn flex items-center gap-2">
             <img src="./assets/coin.png" alt="" />
-            <span id="quota-balance" class="text-xl">2400</span>
+            <span class="card-balance text-xl">2400</span>
             <span class="text-xl">BDT</span>
           </button>
-          <h2 id="heading3" class="text-[#111111] text-xl font-bold my-3">
+          <h2 id="heading3" class="text-[#111111] text-xl font-bold my-3 card-title">
             Aid for Injured in the Quota Movement
           </h2>
           <p class="text-[#111111B3] font-semibold mb-5 lg:mb-10">
@@ -142,15 +142,15 @@
             
           </p>
           <input id="quota-input"
-            class="border-2 border-gray-200 w-full p-3 rounded-xl"
+            class="input border-2 border-gray-200 w-full p-3 rounded-xl"
             type="text"
             placeholder="Write Donation Amount"
           />
           <div class="text-center">
-            <button id="quota-btn" class="my-6 text-center bg-[#B4F461] py-3 px-5 rounded-xl text-[#111111] font-bold text-xl">Donate Now</button>
+            <button id="quota-btn" class="my-6 text-center bg-[#B4F461] py-3 px-5 rounded-xl text-[#111111] font-bold text-xl donate-btn">Donate Now</button>
           </div>
            <!-- Open the modal using ID.showModal() method -->
-           <dialog id="my_modal_1" class="modal text-center">
+           <dialog id="show-modal-btn" class="modal text-center">
             <div class="modal-box">
               <h3 class="text-4xl font-bold">Congrates!</h3>
               <div class="flex justify-center py-5">
@@ -174,12 +174,12 @@
       </section>
       <!-- Quota Movement, Bangladesh section ends here-->
     </div>
-      <!-- history section starts here  -->
-       <section id="history-section" class="hidden">
-       </section>
-      <!-- history section ends here  -->
     </main>
-    <script src="./js/utilities.js"></script>
+    <!-- history section starts here  -->
+    <section id="history-container" class="w-11/12 mx-auto hidden">
+    </section>
+   <!-- history section ends here  -->
+    <!-- <script src="./js/utilities.js"></script> -->
     <script src="./js/index.js"></script>
   </body>
 </html>

@@ -1,147 +1,70 @@
-// show the section by history button
-document.getElementById("history-btn").addEventListener("click", function () {
-  showSectionById("history-section");
+const donateBtns = document.querySelectorAll('.donate-btn')
 
-  document.getElementById("history-btn").classList.add("bg-[#B4F461]");
+//handle main balance
+const updateBalance = (amountBalance) => {
+  const navbarBalance = parseFloat(document.getElementById('balance').innerText)
+  const remainingBalance = navbarBalance - amountBalance;
+  document.getElementById('balance').innerText = remainingBalance.toFixed(2)
+}
 
-  document.getElementById("donation-btn").classList.remove("bg-[#B4F461]");
-});
+// the work of history button 
+const addToDonationHistory = (amountBalance, cardTitle) => {
+  const historyContainer = document.getElementById('history-container')
+  const historyEntry = document.createElement('div')
+  historyEntry.classList.add('border', 'p-4', 'rounded-lg', 'shadow-sm')
+  historyEntry.innerHTML = `
+  <h3 class='font-semibold'>Title: ${cardTitle}</h3>
+  <p>Donation Amount: ${amountBalance}</p>
+  <p>${new Date().toLocaleString()}</p>
+  `;
+  historyContainer.appendChild(historyEntry)
+  
+}
 
-
-// show the section by donation button
-document.getElementById("donation-btn").addEventListener("click", function () {
-  document.getElementById("donation-btn").classList.add("bg-[#B4F461]");
-
-  document.getElementById("history-btn").classList.remove("bg-[#B4F461]");
-
-  showSectionById("donation-section");
-});
-
-
-// main balance impliment 
-const mainBalance = document.getElementById("main-balance").innerText;
-let mainBalanceNumber = parseFloat(mainBalance);
-// section button handler of noakhali==============================
-document.getElementById("noakhali-btn").addEventListener("click", function () {
-  const inputValue = getTextFieldValueById("noakhali-input");
-
-  // inputValue field validation here
-  if (
-    isNaN(inputValue) ||
-    inputValue <= 0 ||
-    inputValue === "" ||
-    mainBalanceNumber < inputValue
-  ) {
-    return alert("Invalid Donation Amount");
-  } else {
-    // madal validation
-    document.getElementById("my_modal_1").showModal();
+// handle donate 
+const handleDonate = (button) => {
+  const cartElement = button.closest('.card')
+  const amountBalance = parseFloat(cartElement.querySelector('.input').value)
+  // validation here 
+  const navbarBalance = parseFloat(document.getElementById('balance').innerText)
+  if(isNaN(amountBalance) || amountBalance <= 0 || navbarBalance < amountBalance){
+    alert('Please give valid input')
   }
+  // call update function 
+  updateBalance(amountBalance)
+  // all card balance 
+  const cardBalance = parseFloat(cartElement.querySelector('.card-balance').innerText)
+  const newCardBalance = cardBalance + amountBalance
+  cartElement.querySelector('.card-balance').innerText = newCardBalance.toFixed(2)
 
+  // this is for addToDonationHistory function 
+  const cardTitle = cartElement.querySelector('.card-title').innerText
+  addToDonationHistory(amountBalance, cardTitle)
 
-  // noakhali-balance update
-  const noakhaliBalance = document.getElementById("noakhali-balance").innerText;
-  let noakhaliBalanceNumber = parseFloat(noakhaliBalance);
-  noakhaliBalanceNumber += inputValue;
-  document.getElementById("noakhali-balance").innerText = noakhaliBalanceNumber;
+  cartElement.querySelector('.input').value = ''
+  document.getElementById('show-modal-btn').showModal()
 
-  // main balance update
-  mainBalanceNumber -= inputValue;
-  document.getElementById("main-balance").innerText = mainBalanceNumber;
+}
 
-  document.getElementById("noakhali-input").value = "";
+// handle button 
+donateBtns.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    handleDonate(e.target)
+  })
+})
 
-  // history section update
-  const historyContainer = document.getElementById("history-section");
-  const heading = document.getElementById("heading1").innerText;
-  const div = document.createElement("div");
-  div.classList.add("border-2", "border-gray-100", "p-6", "rounded-xl", "my-5");
-  div.innerHTML = `
-    <h4 class='text-xl font-bold my-3'>${inputValue} Taka is ${heading}</h4>
-    <p> Date :${new Date()} </p>
-    `;
-  historyContainer.appendChild(div);
-});
+// functionality of history btn 
+document.getElementById('show-history-btn').addEventListener('click', ()=> {
+  document.getElementById('show-donation-btn').classList.remove('bg-[#B4F461]')
+  document.getElementById('show-history-btn').classList.add('bg-[#B4F461]')
+  document.getElementById('donation-container').classList.add('hidden')
+  document.getElementById('history-container').classList.remove('hidden')
+})
 
-
-// section button handler of feni =============================
-document.getElementById("feni-btn").addEventListener("click", function () {
-  const inputValue = getTextFieldValueById("feni-input");
-
-  // inputValue field validation here
-  if (
-    isNaN(inputValue) ||
-    inputValue <= 0 ||
-    inputValue === "" ||
-    mainBalanceNumber < inputValue
-  ) {
-    return alert("Invalid Donation Amount");
-  } else {
-    // madal validation
-    document.getElementById("my_modal_1").showModal();
-  }
-
-  // noakhali-balance update
-  const feniBalance = document.getElementById("feni-balance").innerText;
-  let feniBalanceNumber = parseFloat(feniBalance);
-  feniBalanceNumber += inputValue;
-  document.getElementById("feni-balance").innerText = feniBalanceNumber;
-
-  // main balance update
-  mainBalanceNumber -= inputValue;
-  document.getElementById("main-balance").innerText = mainBalanceNumber;
-
-  document.getElementById("feni-input").value = "";
-
-  // history section update
-  const historyContainer = document.getElementById("history-section");
-  const heading = document.getElementById("heading2").innerText;
-  const div = document.createElement("div");
-  div.classList.add("border-2", "border-gray-100", "p-6", "rounded-xl", "my-5");
-  div.innerHTML = `
-    <h4 class='text-xl font-bold my-3'>${inputValue} Taka is ${heading}</h4>
-    <p> Date :${new Date()} </p>
-    `;
-  historyContainer.appendChild(div);
-});
-
-
-// section button handler of Quota Movement  =============================
-document.getElementById("quota-btn").addEventListener("click", function () {
-  const inputValue = getTextFieldValueById("quota-input");
-
-  // inputValue field validation here
-  if (
-    isNaN(inputValue) ||
-    inputValue <= 0 ||
-    inputValue === "" ||
-    mainBalanceNumber < inputValue
-  ) {
-    return alert("Invalid Donation Amount");
-  } else {
-    // madal validation
-    document.getElementById("my_modal_1").showModal();
-  }
-  // noakhali-balance update
-  const quotaBalance = document.getElementById("quota-balance").innerText;
-  let quotaBalanceNumber = parseFloat(quotaBalance);
-  quotaBalanceNumber += inputValue;
-  document.getElementById("quota-balance").innerText = quotaBalanceNumber;
-
-  // main balance update
-  mainBalanceNumber -= inputValue;
-  document.getElementById("main-balance").innerText = mainBalanceNumber;
-
-  document.getElementById("quota-input").value = "";
-
-  // history section update
-  const historyContainer = document.getElementById("history-section");
-  const heading = document.getElementById("heading3").innerText;
-  const div = document.createElement("div");
-  div.classList.add("border-2", "border-gray-100", "p-6", "rounded-xl", "my-5");
-  div.innerHTML = `
-    <h4 class='text-xl font-bold my-3'>${inputValue} Taka is ${heading}</h4>
-    <p> Date :${new Date()} </p>
-    `;
-  historyContainer.appendChild(div);
-});
+//functionality of donation btn
+document.getElementById('show-donation-btn').addEventListener('click', () => {
+  document.getElementById('show-donation-btn').classList.add('bg-[#B4F461]')
+  document.getElementById('show-history-btn').classList.remove('bg-[#B4F461]')
+  document.getElementById('donation-container').classList.remove('hidden')
+  document.getElementById('history-container').classList.add('hidden')
+})
